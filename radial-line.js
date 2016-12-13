@@ -2,8 +2,8 @@
     svg.setAttribute("height", '100%');
     svg.setAttribute("width", '100%');
     svg.setAttribute("style", 'position:absolute;left:0;top:0;');
-    var HEIGHT = svg.clientHeight;
-    var WIDTH = svg.clientWidth;
+    var HEIGHT = svg.clientHeight || svg.parentElement.clientHeight;
+    var WIDTH = svg.clientWidth || svg.parentElement.clientWidth;
 
 
     // Tool function
