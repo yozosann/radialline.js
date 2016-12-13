@@ -1,4 +1,4 @@
-﻿function rayMap(svg, configObj, isRelative) {
+﻿function RayMap(svg, configObj, isRelative) {
     svg.setAttribute("height", '100%');
     svg.setAttribute("width", '100%');
     svg.setAttribute("style", 'position:absolute;left:0;top:0;');
@@ -104,7 +104,7 @@
         this.color = color;
         this.isLink = isLink;
         this.x = x;
-        this.y = window.innerHeight - y; //left bottom -> (0,0)
+        this.y = y; 
     }
 
     Point.prototype.draw = function () {
@@ -378,7 +378,7 @@
             mainTexts = mainContent.texts;
             var pointTextArr;
 
-            points[0] = new Point(mainPoint.x, window.innerHeight - mainPoint.y, mainPoint.r, mainPoint.color);
+            points[0] = new Point(mainPoint.x, mainPoint.y, mainPoint.r, mainPoint.color);
             for (var o = 0; o < mainTexts.length; o++) {
                 pointTextArr = [];
                 pointTextArr[o] = new Text(mainPoint.x + mainTexts[o].offsetX, mainPoint.y + mainTexts[o].offsetY,
@@ -397,10 +397,10 @@
 
             for (var i = 0; i < otherPoints.length; i++) {
                 if (isRelative) {
-                    point = new Point(otherPoints[i].x + mainPoint.x, window.innerHeight - (otherPoints[i].y + mainPoint.y), otherR, otherPointColor, otherPoints[i].isLink);
+                    point = new Point(otherPoints[i].x + mainPoint.x, otherPoints[i].y + mainPoint.y, otherR, otherPointColor, otherPoints[i].isLink);
                 }
                 else {
-                    point = new Point(otherPoints[i].x, window.innerHeight - otherPoints[i].y, otherR, otherPointColor, otherPoints[i].isLink);
+                    point = new Point(otherPoints[i].x, otherPoints[i].y, otherR, otherPointColor, otherPoints[i].isLink);
                 }
                 pointTexts = otherTexts[i];
                 pointTextArr = [];
