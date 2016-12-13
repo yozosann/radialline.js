@@ -80,7 +80,7 @@
     }
 
     // cross-browser requestAnimFrame
-    window.requestAnimFrame = (function () {
+    window.requestAnimationFrame = (function () {
         return window.requestAnimationFrame ||
                 window.webkitRequestAnimationFrame ||
                 window.mozRequestAnimationFrame ||
@@ -104,7 +104,7 @@
         this.color = color;
         this.isLink = isLink;
         this.x = x;
-        this.y = y; 
+        this.y = y;
     }
 
     Point.prototype.draw = function () {
