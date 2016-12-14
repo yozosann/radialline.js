@@ -444,8 +444,8 @@
     EventUtil.addHandler(window, 'resize', function () {
         setInnerHTMLEmpty(svg);
         recoverAllxy(configObj);
-        HEIGHT = svg.clientHeight;
-        WIDTH = svg.clientWidth;
+        HEIGHT = svg.clientHeight || svg.parentElement.clientHeight;
+        WIDTH = svg.clientWidth || svg.parentElement.clientWidth;
         changeAllxy(configObj);
         configToObjectAndDraw(configObj);
     });
