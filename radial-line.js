@@ -72,9 +72,25 @@
             }
         }
     }
-    function getOtherPointsPos(obj) {
-
+    function isIE() { //ie?
+        if (!!window.ActiveXObject || "ActiveXObject" in window)
+            return true;
+        else
+            return false;
     }
+
+    function setInnerHTMLEmpty(dom) {
+        var node = dom.firstChild;
+        var tmpNode;
+        while(node!=dom.lastChild)
+        {
+            tmpNode = node.nextElementSibling;
+            dom.removeChild(node);
+            node = tmpNode;
+        }
+        dom.removeChild(dom.lastChild);
+    }
+
     Array.prototype.clone = function () {
         return this.slice(0);
     }
@@ -426,7 +442,7 @@
 
     //Size response
     EventUtil.addHandler(window, 'resize', function () {
-        svg.innerHTML = '';
+        setInnerHTMLEmpty(svg);
         recoverAllxy(configObj);
         HEIGHT = svg.clientHeight;
         WIDTH = svg.clientWidth;
