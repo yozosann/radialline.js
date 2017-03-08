@@ -1,7 +1,7 @@
 # radialline
 ### Baidu talent homepage ray effect
 ### 基于svg的百度招聘首页的射线地图效果，鼠标移上去会出现射线效果和波澜效果，支持IE9及以上，chrome，ff。其他未测。
-###示例：[demo](https://yozosann.github.io/demo/demo1.html)
+###示例：[demo](https://yozosann.github.io/demo/radial-line.html)
 
 #### 喜欢请点star，3q
 
